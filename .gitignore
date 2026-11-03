@@ -1,0 +1,9 @@
+.oil-ui/
+.dsh-desktop-runtime/
+node_modules/
+*.tgz
+dist/
+bin/*.pdb
+bin/*.exe.config
+.env
+.env.*

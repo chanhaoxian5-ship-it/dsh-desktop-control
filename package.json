@@ -1,0 +1,20 @@
+{
+  "name": "dsh-desktop-control",
+  "version": "0.1.0",
+  "description": "Visible Windows desktop control for DSH: large pointer, edge glow and guarded UI Automation",
+  "type": "module",
+  "license": "MIT",
+  "author": "chanhaoxian5-ship-it",
+  "repository": {"type":"git","url":"git+https://github.com/chanhaoxian5-ship-it/dsh-desktop-control.git"},
+  "homepage": "https://github.com/chanhaoxian5-ship-it/dsh-desktop-control#readme",
+  "engines": {"node":">=22","dsh":">=0.2.1-rc.5 <0.3.0"},
+  "os": ["win32"],
+  "main": "./index.mjs",
+  "exports": {".":"./index.mjs","./cordis.patch.yml":"./cordis.patch.yml"},
+  "dsh": {"bundle":{"patch":"./cordis.patch.yml"}},
+  "peerDependencies": {"@deepseek-ai/dsh-tools":">=0.2.1-rc.5 <0.3.0"},
+  "devDependencies": {"@deepseek-ai/dsh-tools":"0.2.1-rc.5"},
+  "scripts": {"build":"pwsh -NoProfile -File scripts/build.ps1","test":"node --test tests/*.test.mjs","test:native":"node tests/native-smoke.mjs","preview":"node desktop.mjs preview 8"},
+  "files": ["index.mjs","plugin.mjs","desktop.mjs","cordis.patch.yml","bin/DshDesktop.exe","native/","scripts/","skills/","assets/","README.md","NOTICE.md","LICENSE"],
+  "keywords": ["dsh-plugin","desktop-control","windows","uiautomation","computer-use"]
+}
